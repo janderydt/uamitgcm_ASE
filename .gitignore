@@ -1,0 +1,8 @@
+# ignore everything...
+*
+
+# ...except
+!README.md
+!.gitignore
+!Figures_scripts/
+!Figures_scripts/Fig*_*.m
