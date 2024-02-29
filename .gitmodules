@@ -1,0 +1,3 @@
+[submodule "uamitgcm_tools"]
+	path = uamitgcm_tools
+	url = git@github.com:janderydt/uamitgcm_tools.git
