@@ -1,23 +1,31 @@
 function Fig2_MeltFrequencyDistribution
 
+%% Plotting routine for Fig 2 in https://doi.org/10.5194/egusphere-2023-1587
+%% Requires the uamitgcm toolbox (https://github.com/janderydt/uamitgcm_tools)
+%% and Ua Utilities (https://github.com/GHilmarG/UaSource/tree/beta/UaUtilities)
+
+% Initialize UaMitgcm case directory 
+froot_data = getenv("froot_uamitgcm");
+
+% Load UaMITgcm toolbox
+addpath(getenv("froot_tools"));
+
+% Basins to plot
 basins = ["PIG", "TW", "CRDT"];
 basintitle = ["Pine Island","Thwaites","Crosson & Dotson"];
-    
-froot_data = getenv("froot_uamitgcm");
-froot_tools = getenv("froot_tools");
 
+%% Gather data
+% Load geometry data
 load(froot_data+"/Ua_InputData/GriddedInterpolants_sBh_Bedmachine2020-07-15_Bamber2009.mat","FB");
 load(froot_data+"/UaMITgcm_source/example/PTDC_666/ua_custom/BoundaryCoordinates.mat");
-addpath(froot_tools);
 
-%%%%%%%%%%%%%%%%%%%%%
-%% READ MELT RATES %%
-%%%%%%%%%%%%%%%%%%%%%
+% Read melt rates for experiments in runID
 runID = ["PTDC_001","PTDC_002_v1","PTDC_003"];
 
 for id = 1:numel(runID)
-    load("HeatVolumeTransport_IceFront_below400m_"+runID(id)+".mat");
-    %load("HeatVolumeTransport_moving400mdraft_"+runID(id)+".mat");
+    % HeatVolumeTransport files are produced with the GenerateTransportFiles.m function in the
+    % UaMITgcm toolbox
+    load("heatvolumetransport_icefront_below400m_"+runID(id)+".mat");
     if contains(runID(id),["PTDC_001","PTDC_000"])
         I = find(datenum("19970101","yyyymmdd")<=MITTime & MITTime<datenum("20150101","yyyymmdd"));
     else
@@ -32,15 +40,8 @@ for id = 1:numel(runID)
         (integral2D.DT.monthly.ISarea_integral(I)+integral2D.CR.monthly.ISarea_integral(I))*1e9;
     data(id).time = MITTime(I);
 end
-% 
-% figure; hold on;
-% for id=1:numel(runID)
-%     for bb=1:3
-%         subplot(1,3,bb); hold on;
-%         plot(data(id).time,data(id).basins(bb).melt);
-%     end
-% end
 
+%% Plotting
 H=fig("units","inches","width",100*12/72.27,"height",30*12/72.27,"fontsize",14,"font","Helvetica");
 
 tlo_fig = tiledlayout(1,3,"TileSpacing","compact");
@@ -81,7 +82,6 @@ legend(ax_fig(1),[g(1) h g(2) g(3)],["1997-2014","mean 1997-2014","\it hi\_melt 
 
 xlabel(tlo_fig,"Mean melt rate [m/yr]","fontsize",16);
 ylabel(tlo_fig,"Frequency [%]","fontsize",16);
-
 
 pos = get(H,"Position");
 set(H,"PaperPositionMode","Auto","PaperUnits","Inches","PaperSize",[pos(3),pos(4)]);

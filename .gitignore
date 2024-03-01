@@ -4,5 +4,6 @@
 # ...except
 !README.md
 !.gitignore
+!uamitgcm_tools/
 !Figures_scripts/
 !Figures_scripts/Fig*_*.m
