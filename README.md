@@ -2,7 +2,7 @@
 
 The repository contains scripts to
 * generate model diagnostics from the raw Úa-MITgcm output:
-  ** test
+  + test
 
   This requires the Úa-MITgcm toolbox, which is linked as a submodule. To clone the toolbox, use `git clone --recursive` instead of just `git clone`. 
 * reproduce the figures in [De Rydt and Naughten, 2023](https://doi.org/10.5194/egusphere-2023-1587).
