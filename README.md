@@ -11,7 +11,7 @@ A regional configuration of the coupled ice-ocean model Úa-MITgcm was developed
 
 Raw Úa-MITgcm output at 10-year intervals for the ''ref_melt'', ''hi_melt'', ''av_melt'' and ''var_melt'' experiments in De Rydt and Naughten, 2023 is available here.
 
-== References ==
+## References
 De Rydt, J. and Naughten, K.: Geometric amplification and suppression of ice-shelf basal melt in West Antarctica, EGUsphere \[preprint\], https://doi.org/10.5194/egusphere-2023-1587, 2023
 
 
