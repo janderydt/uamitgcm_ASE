@@ -5,5 +5,5 @@
 !README.md
 !.gitignore
 !uamitgcm_tools/
-!Figures_scripts/
-!Figures_scripts/Fig*_*.m
+!figures_tc/
+!figures_tc/Fig*_*.m
