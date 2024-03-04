@@ -2,7 +2,7 @@ function FigA3_MeltValidation
 
 section = ["PIG", "TW", "CR", "DT"];
 sectiontitle = ["Pine Island","Thwaites","Crosson","Dotson"];
-runID = ["PTDC_000","PTDC_001"];
+runID = ["ASE_refmelt","ASE_varmelt"];
 doplots = 1;
 %timestep = [0.25 0.25];
 start = 1;

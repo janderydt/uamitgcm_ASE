@@ -20,13 +20,13 @@ load(froot_data+"/Ua_InputData/GriddedInterpolants_sBh_Bedmachine2020-07-15_Bamb
 load(froot_data+"/UaMITgcm_source/example/PTDC_666/ua_custom/BoundaryCoordinates.mat");
 
 % Read melt rates for experiments in runID
-runID = ["PTDC_001","PTDC_002_v1","PTDC_003"];
+runID = ["ASE_varmelt","ASE_himelt_v1","ASE_avmelt"];
 
 for id = 1:numel(runID)
     % HeatVolumeTransport files are produced with the GenerateTransportFiles.m function in the
     % UaMITgcm toolbox
     load("heatvolumetransport_icefront_below400m_"+runID(id)+".mat");
-    if contains(runID(id),["PTDC_001","PTDC_000"])
+    if contains(runID(id),["ASE_varmelt","ASE_refmelt"])
         I = find(datenum("19970101","yyyymmdd")<=MITTime & MITTime<datenum("20150101","yyyymmdd"));
     else
         I = find(datenum("20160101","yyyymmdd")<=MITTime & MITTime<datenum("20170101","yyyymmdd"));
@@ -55,7 +55,7 @@ for id=1:numel(runID)
         
     for ss=1:numel(basins)
 
-        if contains(runID(id),["PTDC_001","PTDC_000"])
+        if contains(runID(id),["ASE_varmelt","ASE_refmelt"])
             g(id)=histogram(ax_fig(ss),data(id).basins(ss).melt(:),[0:1:20],"normalization","probability");
             M = mean(data(id).basins(ss).melt(:));
             h=plot(ax_fig(ss),[M M],[0 0.5],"-m","linewidth",1);

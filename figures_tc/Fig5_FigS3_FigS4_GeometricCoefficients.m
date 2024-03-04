@@ -4,7 +4,7 @@ addpath(getenv("froot_tools"));
 
 endtime = datenum('01012215','ddmmyyyy');
 
-runID = {'PTDC_002','PTDC_003'};
+runID = {'ASE_himelt','ASE_avmelt'};
 runIDlinestyle = {'-','-','-','-'};
 runIDlinewidth = [2 2];
 basins = {'PIG','TW','CR','DT'};
@@ -68,11 +68,11 @@ end
 
 for jj=1:numel(runID)
 
-    load(['HeatVolumeTransport_IceFront_below400m_PTDC_001.mat']);
+    load(['HeatVolumeTransport_IceFront_below400m_ASE_varmelt.mat']);
     MITTime_IF_001 = MITTime;
     section_IF_001 = section;
 
-    load(['HeatVolumeTransport_moving400mdraft_PTDC_001.mat']);
+    load(['HeatVolumeTransport_moving400mdraft_ASE_varmelt.mat']);
     MITTime_001 = MITTime;
     section_001 = section;
     integral2D_001 = integral2D;
@@ -83,7 +83,7 @@ for jj=1:numel(runID)
 
     load(['HeatVolumeTransport_moving400mdraft_',runID{jj},'.mat']);
        
-    SF = load('CavityStreamFunctions_PTDC_002_monthly.mat');
+    SF = load('CavityStreamFunctions_ASE_himelt_monthly.mat');
 
     for gg=[numel(basins):-1:1]
 
@@ -160,10 +160,10 @@ for jj=1:numel(runID)
 
 
         %% transient
-       if contains(runID{jj},{'PTDC_001','PTDC_000'})
+       if contains(runID{jj},{'ASE_varmelt','ASE_refmelt'})
             [~,start_MITTime] = min(abs(MITTime - datenum('01011995','ddmmyyyy')));
             [~,start_MITTime_IF] = min(abs(MITTime_IF - datenum('01011995','ddmmyyyy')));
-       elseif contains(runID{jj},{'PTDC_002','PTDC_003','PTDC_004'})
+       elseif contains(runID{jj},{'ASE_himelt','ASE_avmelt','PTDC_004'})
             [~,start_MITTime] = min(abs(MITTime - datenum('01012015','ddmmyyyy')));
             [~,start_MITTime_IF] = min(abs(MITTime_IF - datenum('01012015','ddmmyyyy')));
        end
@@ -989,7 +989,7 @@ end
 %     if ~contains(runID,'PTDC_004')
 %         load(['/Volumes/mainJDRydt2/UaMITgcm_v2/cases/',runID{1},'/output/202001/Ua/',runID{1},'-RestartFile.mat']);
 %     else
-%         load('/Volumes/mainJDRydt2/UaMITgcm_v2/cases/PTDC_001/output/201501/Ua/PTDC_001-RestartFile.mat');
+%         load('/Volumes/mainJDRydt2/UaMITgcm_v2/cases/ASE_varmelt/output/201501/Ua/ASE_varmelt-RestartFile.mat');
 %     end
 %     GF.node(GF.node<1)=0; %GF.node(GF.node==0 & F.b<-400)= -1;
 % %     PlotNodalBasedQuantities_JDR(ax_fig3(1),MUA.connectivity,MUA.coordinates,...

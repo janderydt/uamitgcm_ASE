@@ -9,7 +9,7 @@ addpath(getenv("froot_tools"));
 %4. surface accumulation
 %5. basal ablation
 
-runID= "PTDC_001";
+runID= "ASE_varmelt";
 
 %years = [2017:2250];
 
@@ -26,9 +26,9 @@ if ~exist("IceShelfMassBalance_"+runID+".mat","file")
     
     output = []; kk=1;
     switch runID
-        case "PTDC_001"
+        case "ASE_varmelt"
             endtime=2726;
-        case {"PTDC_002","PTDC_003"}
+        case {"ASE_himelt","ASE_avmelt"}
             endtime = 12*200;
     end
 
@@ -135,8 +135,8 @@ kk=1;
 
 
 switch runID
-    case {"PTDC_002","PTDC_003"}
-        data2=load("IceShelfMassBalance_PTDC_001.mat");
+    case {"ASE_himelt","ASE_avmelt"}
+        data2=load("IceShelfMassBalance_ASE_varmelt.mat");
         for gg=1:numel(basins)
             basin = basins(gg).Name;
             data.(basin).A = [data2.data.(basin).A(1:18*12) data.(basin).A];
@@ -151,7 +151,7 @@ switch runID
         end
         time = ([data2.data.time(1:18*12) data.time]-data.time(1))/365.25;
         
-    case "PTDC_001"
+    case "ASE_varmelt"
         for gg=1:numel(basins)
             basin = basins(gg).Name;
             [~,IqGLmax(gg)]=max(data.(basin).GLflux);
@@ -228,9 +228,9 @@ pos = get(H,"Position");
 set(H,"PaperPositionMode","Auto","PaperUnits","Inches","PaperSize",[pos(3),pos(4)]);
 folder = ["../Figures/"];
 switch runID
-    case "PTDC_002"
+    case "ASE_himelt"
         fname = [folder+"/Fig8_IceShelfMassBalance_"+runID];
-    case "PTDC_001"
+    case "ASE_varmelt"
         fname = [folder+"/FigS6_IceShelfMassBalance_"+runID];
 end
 print(H,fname,"-dpng","-r400");

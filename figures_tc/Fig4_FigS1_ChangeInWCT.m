@@ -5,7 +5,7 @@ function Fig4_FigS1_ChangeInWCT
 %% and Ua Utilities (https://github.com/GHilmarG/UaSource/tree/beta/UaUtilities)
 
 
-runID="PTDC_002";
+runID="ASE_himelt";
 basins = ["PIG","TW","DC"];
 
 panellabels = {'a','b','c'};
@@ -253,9 +253,9 @@ folder = "../Figures/"+runID;
 if ~exist(folder)
     mkdir(folder);
 end
-if strcmp(runID,"PTDC_002")
-    fname = folder+"/Fig4_ChangeInWCT_PTDC_002";
-elseif strcmp(runID,"PTDC_003")
-    fname = folder+"/FigS2_ChangeInWCT_PTDC_003";
+if strcmp(runID,"ASE_himelt")
+    fname = folder+"/Fig4_ChangeInWCT_ASE_himelt";
+elseif strcmp(runID,"ASE_avmelt")
+    fname = folder+"/FigS2_ChangeInWCT_ASE_avmelt";
 end
 print(Hfig,fname,"-dpng","-r400");

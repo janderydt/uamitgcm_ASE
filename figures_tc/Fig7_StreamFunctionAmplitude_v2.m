@@ -1,6 +1,6 @@
 function Fig7_StreamFunctionAmplitude_v2
 
-runID = "PTDC_002";
+runID = "ASE_himelt";
 basins = ["PIG","TW","CR","DT"];
 glaciername = ["Pine Island","Thwaites","Crosson","Dotson"];
 

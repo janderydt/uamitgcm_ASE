@@ -13,8 +13,8 @@ addpath(getenv("froot_tools"));
 
 %% Gather data
 % Load MITgcm grids 
-lonCMITbound = ncread(froot+"/cases/PTDC_001/output/221501/MITgcm/output.nc","XC")/1e3;
-latCMITbound = ncread(froot+"/cases/PTDC_001/output/221501/MITgcm/output.nc","YC")/1e3;
+lonCMITbound = ncread(froot+"/cases/ASE_varmelt/output/221501/MITgcm/output.nc","XC")/1e3;
+latCMITbound = ncread(froot+"/cases/ASE_varmelt/output/221501/MITgcm/output.nc","YC")/1e3;
 
 % Load temperature data from Naughten et al. 2021 (https://doi.org/10.1029/2021GL094566)
 lon=ncread('temp_max_below_400m_last10y_avg.nc','X');

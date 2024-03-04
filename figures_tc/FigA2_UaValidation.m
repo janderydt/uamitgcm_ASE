@@ -1,6 +1,6 @@
 function FigA2_UaValidation
 
-runID="PTDC_001";
+runID="ASE_varmelt";
 basin = "AS";
 xmin = -1750; xmax = -1350;
 ymin = -750; ymax = 0;

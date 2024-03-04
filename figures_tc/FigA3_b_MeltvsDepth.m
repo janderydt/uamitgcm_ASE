@@ -1,7 +1,7 @@
 function FigS3_b_MeltvsDepth
 
 
-runID = "PTDC_002";
+runID = "ASE_himelt";
 
 frootm = getenv("froot_tools");
 

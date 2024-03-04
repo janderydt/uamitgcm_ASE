@@ -1,6 +1,6 @@
 function FigS6_DepthAvFlow_PV
 
-runID = "PTDC_002";
+runID = "ASE_himelt";
 
 Itime = [2*12 20*12 40*12 60*12 120*12 180*12];
 year=["0","20","40","60","120","180"];

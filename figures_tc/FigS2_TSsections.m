@@ -3,7 +3,7 @@ function FigS2_TSsections
 variables_to_plot = "TS"; %options: TS, VEL, gradRho, gradT, gradS
 sections = ["DT","PIG"];
 
-runID = "PTDC_002";
+runID = "ASE_himelt";
 timestep = 1;% in number of months
 
 rhoConst = 1024;
@@ -18,7 +18,7 @@ iterations = 4; % number of slices to include
 %interp = dir([frootm,"/Data/GriddedInterpolants_sBh_Bedmap2.mat"]);
 %load([interp.folder,"/",interp.name],"FB");
 load(getenv('froot_uamitgcm')+"/Ua_InputData/GriddedInterpolants_sBh_Bedmachine2020-07-15_Bamber2009.mat","FB")
-load(getenv('froot_uamitgcm')+"/cases/PTDC_001/ua_custom/BoundaryCoordinates.mat");
+load(getenv('froot_uamitgcm')+"/cases/ASE_varmelt/ua_custom/BoundaryCoordinates.mat");
 
 frootm = getenv('froot_uamitgcm')+"/cases/"+runID;
 subd=dir(frootm+"/output/");

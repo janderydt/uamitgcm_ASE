@@ -2,7 +2,7 @@ function FigA3_a_ChangeInMelt
 
 plotoption ="melt";%icethickness_speed, melt_thickness
 
-runID="PTDC_002";
+runID="ASE_himelt";
 basins = ["PIG","TW","CR","DT"];
 glaciername = ["Pine Island","Thwaites","Crosson","Dotson"];
 
