@@ -1,4 +1,4 @@
-# Repository in support of De Rydt and Naughten, 2023
+# Repository in support of De Rydt and Naughten (2023)
 
 The repository contains scripts to
 
