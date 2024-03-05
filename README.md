@@ -4,7 +4,7 @@ The repository contains scripts to
 
 * generate model diagnostics from the raw Úa-MITgcm output:
   + mean melt rates and cavity transfer coefficients (Eq. (1) and Figs. 5, S3 and S4 in De Rydt and Naugthen (2023))
-  + streamfunction amplitudes (Figs. 7 and S5 in De Rydt and Naughten, 2023)
+  + streamfunction amplitudes (Figs. 7 and S5 in De Rydt and Naughten (2023))
   + ice-shelf mass balance components (Figs. 9 and S6 in De Rydt and Naughten (2023))
     
   This requires the Úa-MITgcm toolbox, which is linked as a submodule. To clone the toolbox, use `git clone --recursive` instead of just `git clone`.
