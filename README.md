@@ -9,7 +9,7 @@ The repository contains scripts to
     
   This requires the Úa-MITgcm toolbox, which is linked as a submodule. To clone the toolbox, use `git clone --recursive` instead of just `git clone`.
   
-* reproduce all figures in [De Rydt and Naughten, 2023]
+* reproduce all figures in De Rydt and Naughten, 2023
 
 The results in De Rydt and Naughten, 2023 are based on a regional Amundsen Sea Embayement configuration of the coupled ice-ocean model Úa-MITgcm. The Úa and MITgcm input files and the Úa-MITgcm config files can be found [here](https://github.com/knaughten/UaMITgcm/tree/archer2/example/ASE_999).
 
