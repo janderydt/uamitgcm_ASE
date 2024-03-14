@@ -13,7 +13,7 @@ The repository contains scripts to
 
 The results in De Rydt and Naughten (2023) are based on a regional Amundsen Sea Embayement configuration of the coupled ice-ocean model Úa-MITgcm. The Úa and MITgcm input files and the Úa-MITgcm config files can be found [here](https://github.com/knaughten/UaMITgcm/tree/archer2/example/ASE_999).
 
-Raw Úa-MITgcm output at 10-year intervals for the _ref\_melt_, _hi\_melt_, _av\_melt_ and _var\_melt_ experiments in De Rydt and Naughten (2023) is available [here](https://zenodo.org/records/10778033).
+Unprocessed Úa-MITgcm output at 10-year intervals for the _ref\_melt_, _hi\_melt_, _av\_melt_ and _var\_melt_ experiments in De Rydt and Naughten (2023) is available [here](https://zenodo.org/records/10778033).
 
 ## References
 De Rydt, J. and Naughten, K.: Geometric amplification and suppression of ice-shelf basal melt in West Antarctica, EGUsphere \[preprint\], https://doi.org/10.5194/egusphere-2023-1587, 2023
